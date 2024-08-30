@@ -130,6 +130,14 @@ print(country[0]) # display US
 print(country[27]) # display UEA
 print(country[168]) # display SK&N 
 
+'''(outout)
+-----After GDP(abbrev.) correction-----
+['2', 'China', '$17,963,200,000,000', '$17.963 trillion', '2.99%', '1,425,179,569', '$12,604', '17.86%']
+['1', 'United', 'States', '$25,462,700,000,000', '$25.463 trillion', '2.06%', '341,534,046', '$74,554', '25.32%']
+['28', 'United', 'Arab', 'Emirates', '$507,535,000,000', '$508 billion', '7.41%', '10,242,086', '$49,554', '0.50%']
+['169', 'Saint', 'Kitts', '&', 'Nevis', '$961,563,259', '$962 million', '9.00%', '46,709', '$20,586', '0.00%']
+'''
+
 # list correction(country) --> col Country
 country = [i[:1] + [' '.join(i[1:3])] + i[3:] if len(i) == 9 else i for i in country] 
 country = [i[:1] + [' '.join(i[1:4])] + i[4:] if len(i) == 10 else i for i in country] 
@@ -142,6 +150,14 @@ print(country[0]) # display US
 print(country[27]) # display UEA
 print(country[168]) # display SK&N 
 print()
+
+'''(output)
+-----After Country correction-----
+['2', 'China', '$17,963,200,000,000', '$17.963 trillion', '2.99%', '1,425,179,569', '$12,604', '17.86%']
+['1', 'United States', '$25,462,700,000,000', '$25.463 trillion', '2.06%', '341,534,046', '$74,554', '25.32%']
+['28', 'United Arab Emirates', '$507,535,000,000', '$508 billion', '7.41%', '10,242,086', '$49,554', '0.50%']
+['169', 'Saint Kitts & Nevis', '$961,563,259', '$962 million', '9.00%', '46,709', '$20,586', '0.00%']
+'''
 
 # create dataframe
 df = pd.DataFrame(country, columns=desc)
