@@ -20,7 +20,7 @@ To follow along this project you will needs:
      def __init__(self, name, age):
        self.name = name
        self.age = age
-   ...
+     ...
 
      def __repr__(self):
        return f'Hello {self._name} happy pythoning at {self._age} years old!'
